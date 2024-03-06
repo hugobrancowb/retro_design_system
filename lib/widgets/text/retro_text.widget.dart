@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of retro_design_system;
 
 class RetroText extends Text {
   RetroText(

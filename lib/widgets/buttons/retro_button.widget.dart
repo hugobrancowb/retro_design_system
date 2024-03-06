@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:retro_design_system/widgets/text/retro_text.widget.dart';
+part of retro_design_system;
 
 class RetroButton extends ElevatedButton {
   RetroButton(
@@ -49,7 +48,7 @@ class RetroButton extends ElevatedButton {
           style: style ??
               ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  ButtonBase.getLightBackground(
+                  _ButtonColorsUtil.getLightBackground(
                     enabled: enabled,
                     isOutlined: isOutlined,
                   ),
@@ -73,18 +72,4 @@ class RetroButton extends ElevatedButton {
               ),
           focusNode: focusNode,
         );
-}
-
-mixin ButtonBase {
-  /// Retorna a cor principal do botão claro de acordo com seu estado atual.
-  static Color getLightColor({required bool enabled}) {
-    return enabled ? Colors.black : Colors.grey.shade700;
-  }
-
-  /// Retorna a cor de fundo do botão claro de acordo com seu estado atual.
-  static Color getLightBackground(
-      {required bool enabled, required bool isOutlined}) {
-    if (enabled == false) return Colors.grey.shade200;
-    return isOutlined ? Colors.white : Colors.transparent;
-  }
 }

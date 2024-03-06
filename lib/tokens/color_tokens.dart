@@ -1,5 +1,4 @@
-import 'dart:math';
-import 'dart:ui';
+part of retro_design_system;
 
 class RetroColors {
   static final List<Color> allColors = [

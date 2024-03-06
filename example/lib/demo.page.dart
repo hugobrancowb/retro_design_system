@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:retro_design_system/colors.dart';
-import 'package:retro_design_system/widgets/buttons/retro_button.widget.dart';
-import 'package:retro_design_system/widgets/buttons/retro_button_big.widget.dart';
-import 'package:retro_design_system/widgets/buttons/retro_icon_button.widget.dart';
-import 'package:retro_design_system/widgets/loading_state/loading_state.widget.dart';
-import 'package:retro_design_system/widgets/text/retro_text.widget.dart';
-import 'package:retro_design_system/widgets/text/retro_title.widget.dart';
-import 'package:retro_design_system/widgets/text_input/retro_input.widget.dart';
+import 'package:retro_design_system/retro_design_system.dart';
 
 class DesignSystemDemo extends StatefulWidget {
   const DesignSystemDemo({Key? key}) : super(key: key);

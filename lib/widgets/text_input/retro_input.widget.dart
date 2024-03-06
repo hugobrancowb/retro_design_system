@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:retro_design_system/widgets/text/retro_text.widget.dart';
+part of retro_design_system;
 
 class RetroInput extends TextFormField {
   RetroInput({

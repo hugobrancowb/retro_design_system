@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:retro_design_system/widgets/text/retro_text.widget.dart';
-
-import 'retro_button.widget.dart';
+part of retro_design_system;
 
 class RetroIconButton extends ElevatedButton {
   RetroIconButton({
@@ -78,7 +75,8 @@ class RetroIconButton extends ElevatedButton {
                       child: Icon(
                         icon,
                         size: iconSize,
-                        color: ButtonBase.getLightColor(enabled: enabled),
+                        color:
+                            _ButtonColorsUtil.getLightColor(enabled: enabled),
                       ),
                     ),
                     Padding(
@@ -90,7 +88,7 @@ class RetroIconButton extends ElevatedButton {
               : Icon(icon, size: iconSize, color: iconColor),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
-              ButtonBase.getLightBackground(
+              _ButtonColorsUtil.getLightBackground(
                   isOutlined: isOutlined, enabled: enabled),
             ),
             shadowColor: isOutlined
@@ -101,7 +99,7 @@ class RetroIconButton extends ElevatedButton {
               RoundedRectangleBorder(
                 side: BorderSide(
                     color: isOutlined
-                        ? ButtonBase.getLightColor(enabled: enabled)
+                        ? _ButtonColorsUtil.getLightColor(enabled: enabled)
                         : Colors.transparent,
                     width: 2.0),
                 borderRadius: BorderRadius.zero,

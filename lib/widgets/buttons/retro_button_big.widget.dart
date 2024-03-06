@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:retro_design_system/retro_design_system.dart';
-import 'package:retro_design_system/widgets/loading_state/loading_state.widget.dart';
+part of retro_design_system;
 
 class RetroBigButton extends ElevatedButton {
   RetroBigButton(
@@ -53,9 +51,9 @@ class RetroBigButton extends ElevatedButton {
                 mouseCursor: MaterialStateProperty.all(
                   SystemMouseCursors.click,
                 ),
-                // TODO: isolar tamanhos padrões
-                minimumSize:
-                    MaterialStateProperty.all(const Size.fromRadius(18)),
+                minimumSize: MaterialStateProperty.all(
+                  const Size.fromRadius(_SizeTokens.buttonMinimumSize),
+                ),
                 elevation: MaterialStateProperty.all(0),
               ),
         );
