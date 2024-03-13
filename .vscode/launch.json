@@ -7,19 +7,13 @@
     {
       "name": "retro_design_system web",
       "request": "launch",
-      "type": "dart"
-    },
-    {
-      "name": "retro_design_system web (profile mode)",
-      "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "cwd": "${workspaceFolder}/example",
+      "program": "lib/main.dart",
+      "args": [
+        "-d",
+        "chrome"
+      ]
     },
-    {
-      "name": "retro_design_system web (release mode)",
-      "request": "launch",
-      "type": "dart",
-      "flutterMode": "release"
-    }
   ]
 }
