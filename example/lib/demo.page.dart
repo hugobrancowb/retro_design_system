@@ -60,17 +60,17 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
 
   List<Widget> get formList {
     return [
-      RetroInput(
-        key: const Key("input with label and hint"),
+      const RetroInput(
+        key: Key("input with label and hint"),
         label: "this is a label",
         hintText: "this is a hint text",
       ),
-      RetroInput(
-        key: const Key("input with hint"),
+      const RetroInput(
+        key: Key("input with hint"),
         hintText: "this is a hint text",
       ),
-      RetroInput(
-        key: const Key("disabled input"),
+      const RetroInput(
+        key: Key("disabled input"),
         enabled: false,
         hintText: "disabled input",
       ),
