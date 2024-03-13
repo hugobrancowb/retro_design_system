@@ -19,7 +19,7 @@ class RetroBigButton extends ElevatedButton {
                   children: [
                     RetroH5.white(label, isBold: true),
                     const SizedBox(width: 16),
-                    const LoadingState.white(),
+                    const RetroLoadingIndicator.white(),
                   ],
                 ),
           style: style ??

@@ -27,7 +27,7 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
               const SizedBox(height: 24.0),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [LoadingState()],
+                children: [RetroLoadingIndicator()],
               ),
               const SizedBox(height: 24.0),
               RetroH4("buttons"),
