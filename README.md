@@ -1,5 +1,8 @@
 # Retro Design System
 
+## Demo page
+Go to `example` and run `flutter run -d chrome` to see the demo page.
+
 ## How to install
 After adding `retro_design_system` to the app's package list, import the fonts used adding the following code to the `fonts` section of `pubspec.yml`:
 
