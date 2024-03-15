@@ -1,5 +1,6 @@
 part of retro_design_system;
 
+// TODO make it const
 class RetroButton extends ElevatedButton {
   RetroButton(
     String label, {

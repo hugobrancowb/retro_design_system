@@ -1,7 +1,7 @@
 part of retro_design_system;
 
 class RetroH3 extends RetroText {
-  RetroH3(
+  const RetroH3(
     super.text, {
     super.key,
     super.style,
@@ -10,7 +10,7 @@ class RetroH3 extends RetroText {
     super.fontSize = 48.0,
   }) : super();
 
-  RetroH3.white(
+  const RetroH3.white(
     super.text, {
     super.key,
     super.style,
@@ -19,9 +19,8 @@ class RetroH3 extends RetroText {
   }) : super.white();
 }
 
-// utilizado em botão
 class RetroH4 extends RetroText {
-  RetroH4(
+  const RetroH4(
     super.text, {
     super.key,
     super.style,
@@ -30,7 +29,7 @@ class RetroH4 extends RetroText {
     super.fontSize = 32.0,
   }) : super();
 
-  RetroH4.white(
+  const RetroH4.white(
     super.text, {
     super.key,
     super.style,
@@ -40,7 +39,7 @@ class RetroH4 extends RetroText {
 }
 
 class RetroH5 extends RetroText {
-  RetroH5(
+  const RetroH5(
     super.text, {
     super.key,
     super.style,
@@ -51,7 +50,7 @@ class RetroH5 extends RetroText {
     super.softWrap,
   }) : super();
 
-  RetroH5.white(
+  const RetroH5.white(
     super.text, {
     super.key,
     super.style,

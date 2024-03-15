@@ -5,6 +5,7 @@ class RetroInput extends StatelessWidget {
     this.focusNode,
     this.controller,
     this.maxLines,
+    this.onChanged,
     this.onEditingComplete,
     this.onFieldSubmitted,
     this.cursorColor = Colors.black,
@@ -19,8 +20,9 @@ class RetroInput extends StatelessWidget {
   final FocusNode? focusNode;
   final TextEditingController? controller;
   final int? maxLines;
-  final void Function()? onEditingComplete;
-  final void Function(String)? onFieldSubmitted;
+  final ValueChanged<String>? onChanged;
+  final VoidCallback? onEditingComplete;
+  final ValueChanged<String>? onFieldSubmitted;
   final Color? cursorColor;
   final bool? enabled;
   final TextStyle? style;
@@ -34,6 +36,7 @@ class RetroInput extends StatelessWidget {
       focusNode: focusNode,
       controller: controller,
       maxLines: maxLines,
+      onChanged: onChanged,
       onEditingComplete: onEditingComplete,
       onFieldSubmitted: onFieldSubmitted,
       cursorColor: cursorColor,

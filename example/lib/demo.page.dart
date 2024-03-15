@@ -30,11 +30,11 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
                 children: [LoadingState()],
               ),
               const SizedBox(height: 24.0),
-              RetroH4("buttons"),
+              const RetroH4("buttons"),
               const SizedBox(height: 24.0),
               Wrap(spacing: 30, runSpacing: 30, children: buttonList),
               const Divider(height: 80),
-              RetroH4("inputs"),
+              const RetroH4("inputs"),
               const SizedBox(height: 24.0),
               Wrap(
                 spacing: 30,
@@ -47,7 +47,7 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
                     .toList(),
               ),
               const Divider(height: 80),
-              RetroH4("text"),
+              const RetroH4("text"),
               const SizedBox(height: 24.0),
               Wrap(spacing: 30, runSpacing: 30, children: textList),
               const Divider(height: 80),
@@ -199,10 +199,10 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
 
   List<Widget> get textList {
     return [
-      RetroH3("text h3 bold", key: const Key("text h3 bold")),
-      RetroH4("text h4 bold", key: const Key("text h4 bold")),
-      RetroH5("text h5 bold", key: const Key("text h5 bold")),
-      RetroText("text bold", isBold: true, key: const Key("text bold")),
+      const RetroH3("text h3 bold", key: Key("text h3 bold")),
+      const RetroH4("text h4 bold", key: Key("text h4 bold")),
+      const RetroH5("text h5 bold", key: Key("text h5 bold")),
+      const RetroText("text bold", isBold: true, key: Key("text bold")),
     ];
   }
 
