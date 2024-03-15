@@ -96,30 +96,20 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
         },
       ),
       RetroButton(
-        "primary button",
+        "button",
         key: const Key("primary regular button"),
         onPressed: () {
           setState(() => randomColor = RetroColors.randomColor);
           debugPrint("primary button pressed @ $timestampNow");
         },
       ),
-      RetroButton.light(
-        "secondary button",
-        isOutlined: true,
-        key: const Key("secondary regular button"),
-        onPressed: () {
-          setState(() => randomColor = RetroColors.randomColor);
-          debugPrint("secondary button pressed @ $timestampNow");
-        },
-      ),
       RetroButton(
-        "colorful button",
-        key: const Key("regular button color"),
-        color: randomColor,
-        isOutlined: true,
+        "button disabled",
+        enabled: false,
+        key: const Key("primary regular button disabled"),
         onPressed: () {
           setState(() => randomColor = RetroColors.randomColor);
-          debugPrint("colorful button pressed @ $timestampNow");
+          debugPrint("primary button pressed @ $timestampNow");
         },
       ),
       RetroIconButton.light(

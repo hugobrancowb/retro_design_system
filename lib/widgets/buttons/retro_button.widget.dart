@@ -1,76 +1,78 @@
 part of retro_design_system;
 
-// TODO make it const
-class RetroButton extends ElevatedButton {
-  RetroButton(
-    String label, {
+class RetroButton extends StatelessWidget {
+  const RetroButton(
+    this.label, {
+    required this.onPressed,
+    this.style,
+    this.enabled = true,
+    this.focusNode,
+    Color? backgroundColor,
+    Color? textColor,
+    Color? borderColor,
     super.key,
-    required super.onPressed,
-    ButtonStyle? style,
-    Color color = Colors.black,
-    bool isOutlined = false,
-    bool enabled = true,
-    FocusNode? focusNode,
-  }) : super(
-          child: RetroText.white(label, isBold: true),
-          style: style ??
-              ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(color),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: isOutlined ? Colors.black : Colors.transparent,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.zero,
-                  ),
-                ),
-                elevation: MaterialStateProperty.all(0),
-                mouseCursor: MaterialStateProperty.all(
-                  SystemMouseCursors.click,
-                ),
-                minimumSize:
-                    MaterialStateProperty.all(const Size.fromRadius(18)),
-              ),
-          focusNode: focusNode,
-        );
+  })  : _backgroundColor = backgroundColor,
+        _textColor = textColor,
+        _borderColor = borderColor;
 
-  RetroButton.light(
-    String label, {
-    super.key,
-    required super.onPressed,
-    ButtonStyle? style,
-    Color color = Colors.white,
-    bool isOutlined = false,
-    bool enabled = true,
-    FocusNode? focusNode,
-  }) : super(
-          child: RetroText(label, isBold: true),
-          style: style ??
-              ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  _ButtonColorsUtil.getLightBackground(
-                    enabled: enabled,
-                    isOutlined: isOutlined,
-                  ),
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: isOutlined ? Colors.black : Colors.transparent,
-                      width: 2.0,
-                    ),
-                    borderRadius: BorderRadius.zero,
-                  ),
-                ),
-                elevation: MaterialStateProperty.all(0),
-                mouseCursor: MaterialStateProperty.all(
-                  SystemMouseCursors.click,
-                ),
-                minimumSize: MaterialStateProperty.all(
-                  const Size.fromRadius(18),
-                ),
+  final String label;
+  final void Function()? onPressed;
+  final ButtonStyle? style;
+  final Color? _backgroundColor;
+  final Color? _textColor;
+  final Color? _borderColor;
+  final bool enabled;
+  final FocusNode? focusNode;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: enabled ? onPressed : null,
+      style: style?.copyWith(
+              backgroundColor: MaterialStateProperty.all(backgroundColor)) ??
+          ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(backgroundColor),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                side: BorderSide(color: borderColor, width: 2.0),
+                borderRadius: BorderRadius.zero,
               ),
-          focusNode: focusNode,
-        );
+            ),
+            elevation: MaterialStateProperty.all(0),
+            mouseCursor: enabled
+                ? MaterialStateProperty.all(SystemMouseCursors.click)
+                : MaterialStateProperty.all(SystemMouseCursors.basic),
+            minimumSize: MaterialStateProperty.all(const Size.fromRadius(18)),
+          ),
+      focusNode: focusNode,
+      child: RetroText(label, isBold: true, color: textColor),
+    );
+  }
+
+  // TODO: testar cores e salvar método em _ButtonColorsUtil
+  Color get backgroundColor {
+    late Color mainColor;
+    late Color disabledMergeColor;
+
+    mainColor = _backgroundColor ?? Colors.white;
+    disabledMergeColor = Colors.black12;
+
+    return enabled
+        ? mainColor
+        : Color.alphaBlend(disabledMergeColor, mainColor);
+  }
+
+  // TODO: testar cores e salvar método em _ButtonColorsUtil
+  Color get textColor {
+    final mainColor = _textColor ?? Colors.black;
+    return enabled ? mainColor : Color.alphaBlend(Colors.white38, mainColor);
+  }
+
+  // TODO: testar cores e salvar método em _ButtonColorsUtil
+  Color get borderColor {
+    if (_borderColor == null) return textColor;
+
+    final mainColor = _borderColor ?? Colors.black;
+    return enabled ? mainColor : Color.alphaBlend(Colors.white24, mainColor);
+  }
 }
