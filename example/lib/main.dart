@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retro_design_system/retro_design_system.dart';
 import 'package:retro_design_system_demo/demo.page.dart';
 
 void main() {
@@ -29,7 +30,12 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: RetroColors.blue,
+          primary: RetroColors.blue,
+          secondary: RetroColors.magenta,
+          tertiary: RetroColors.purple,
+        ),
         useMaterial3: true,
       ),
       home: const DesignSystemDemo(),

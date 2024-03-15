@@ -7,7 +7,6 @@ class RetroBigButton extends StatelessWidget {
     this.enabled = true,
     this.loading = false,
     this.style,
-    this.color,
     this.isOutlined = true,
     super.key,
   });
@@ -17,7 +16,6 @@ class RetroBigButton extends StatelessWidget {
   final bool enabled;
   final bool? loading;
   final ButtonStyle? style;
-  final Color? color;
   final bool isOutlined;
 
   @override
@@ -37,7 +35,7 @@ class RetroBigButton extends StatelessWidget {
           );
 
     final backgroundColor =
-        MaterialStateProperty.all(color ?? RetroColors.randomColor);
+        MaterialStateProperty.all(Theme.of(context).primaryColor);
 
     return ElevatedButton(
       onPressed: (loading != true && enabled) ? onPressed : null,

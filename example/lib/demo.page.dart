@@ -82,14 +82,12 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
       RetroBigButton(
         "loading big button",
         key: const Key("primary big button loading"),
-        color: randomColor,
         loading: true,
         onPressed: () {},
       ),
       RetroBigButton(
         "big button",
         key: const Key("big button"),
-        color: randomColor,
         onPressed: () {
           setState(() => randomColor = RetroColors.randomColor);
           debugPrint("big button pressed @ $timestampNow");
