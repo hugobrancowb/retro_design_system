@@ -5,8 +5,8 @@ class RetroText extends StatelessWidget {
     this.text, {
     TextStyle? style,
     this.isBold = false,
-    this.fontSize = 14.0,
-    this.height = 1.2,
+    this.fontSize,
+    this.height,
     this.color,
     this.overflow,
     this.softWrap,
@@ -18,8 +18,8 @@ class RetroText extends StatelessWidget {
     this.text, {
     TextStyle? style,
     this.isBold = false,
-    this.fontSize = 14.0,
-    this.height = 1.2,
+    this.fontSize,
+    this.height,
     this.overflow,
     this.softWrap,
     this.textAlign,
@@ -30,8 +30,8 @@ class RetroText extends StatelessWidget {
   final String text;
   final TextStyle? _style;
   final bool isBold;
-  final double fontSize;
-  final double height;
+  final double? fontSize;
+  final double? height;
   final Color? color;
   final TextOverflow? overflow;
   final bool? softWrap;
@@ -49,7 +49,11 @@ class RetroText extends StatelessWidget {
   }
 
   TextStyle get style {
-    return _style?.copyWith(color: color, fontSize: fontSize, height: height) ??
+    return _style?.copyWith(
+          color: color,
+          fontSize: fontSize,
+          height: height,
+        ) ??
         RegularTextStyle(
           isBold: isBold,
           fontSize: fontSize,

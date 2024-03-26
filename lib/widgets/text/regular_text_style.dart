@@ -4,13 +4,13 @@ class RegularTextStyle extends TextStyle {
   const RegularTextStyle({
     Color? color,
     bool isBold = false,
-    double fontSize = 14.0,
-    double height = 1.2,
+    double? fontSize,
+    double? height,
   }) : super(
           fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
           fontFamily: "Ubuntu Mono",
-          fontSize: fontSize,
-          height: height,
+          fontSize: fontSize ?? 14.0,
+          height: height ?? 1.2,
           color: color ?? Colors.black,
         );
 }
