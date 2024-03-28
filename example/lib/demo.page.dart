@@ -47,6 +47,19 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
                     .toList(),
               ),
               const Divider(height: 80),
+              const RetroH4("links"),
+              const SizedBox(height: 24.0),
+              Wrap(
+                spacing: 30,
+                runSpacing: 30,
+                children: linksList
+                    .map((e) => Container(
+                          constraints: const BoxConstraints(maxWidth: 300),
+                          child: e,
+                        ))
+                    .toList(),
+              ),
+              const Divider(height: 80),
               const RetroH4("text"),
               const SizedBox(height: 24.0),
               Wrap(spacing: 30, runSpacing: 30, children: textList),
@@ -181,6 +194,26 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
         isOutlined: true,
         enabled: false,
         onPressed: () {},
+      ),
+    ];
+  }
+
+  List<Widget> get linksList {
+    return [
+      RetroLink(
+        key: const Key('link a'),
+        'link a',
+        onPressed: () {
+          debugPrint('press on "link a"');
+        },
+      ),
+      RetroLink(
+        key: const Key('link b'),
+        'link with bigger line overhang',
+        lineOverhang: 8,
+        onPressed: () {
+          debugPrint('press on "link b"');
+        },
       ),
     ];
   }
